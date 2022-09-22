@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>search_major_foreign_media_news</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+</head>
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Search for today's news - major international media agencies
+                </h1>
+            </div>
+        </div>
+    </section>
+    <div id="main">
+    </div>
+    <section class="section">
+        <div class="container">
+            <div class="rows">
+                <div class="column is-offset-16 is-10">
+                    <font size="+2">Enter the keyword that you would like to search for -</font>
+                    <form method="GET">
+                        <label for="keyword"></label>
+                        <input type="text" name="keyword" id="keyword" placeholder="keyword..."><br>
+                        <input type="submit" value="Submit" />
+                    </form>
+                    {% for source, author, title, url ,desc, i in mylist %}
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <span class="source">{{ source }}</span>
+                                        <span class="author">{{ author }}</span>
+                                        <br>
+                                        <span class="title">{{ title }}</span>
+                                        <br>
+                                        <a href={{ url }} target="_blank">{{ url }}</a>
+                                        <br>
+                                        <img src="{{ i }}" alt="">
+                                        <br>
+                                        <span class="subtitle">{{ desc }}</span>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    </footer>
+</body>
+</html>
