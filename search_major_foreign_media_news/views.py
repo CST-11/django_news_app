@@ -11,7 +11,7 @@ api_key = "f1ba48fe4a0a469bac55c7f5ec5a5d85"
 
 def home(request):
     keyword = str(request.GET.get('keyword'))
-    search_major_foreign_media_news_url = "https://newsapi.org/v2/everything?domains=bloomberg.com,reuters.com,bbc.co.uk,wsj.com,washingtonpost.com,cnn.com,apnews.com,aljazeera.com&q="+keyword+"&from="+current_date+"&sortBy=relevancy&apiKey="+api_key+""
+    search_major_foreign_media_news_url = "https://newsapi.org/v2/everything?domains=bloomberg.com,reuters.com,bbc.co.uk,wsj.com,washingtonpost.com,cnn.com,cnbc.com,apnews.com,aljazeera.com&q="+keyword+"&from="+current_date+"&sortBy=relevancy&apiKey="+api_key+""
     major_foreign_media_news_mention_keyword = requests.get(search_major_foreign_media_news_url).json()
 
     a = major_foreign_media_news_mention_keyword['articles']
